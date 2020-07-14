@@ -1,0 +1,21 @@
+Extension
+
+FILES:
+1. extension.txt
+2. BST Extension.docx
+3. make_ext
+4. ext.c
+5. ext.h
+
+SUMMARY:
+This extension compares the average and worst case heights
+of binary search trees vs red-black binary search trees.
+Computed heights are compared against theoretical heights.
+
+HOW TO RUN
+make -f make_ext all
+make -f make_ext run
+
+EVIDENCE OF UNDERSTANDING
+Maths proofs in BST Extension.docx
+Diagrams and code explanation in ext.c

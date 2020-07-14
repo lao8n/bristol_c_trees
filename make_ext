@@ -1,0 +1,23 @@
+CFLAGS = -Wall -Wextra -Werror -Wfloat-equal -pedantic -ansi
+INCS = ext.h
+CC = gcc
+LIBS = `sdl2-config --libs` -lm
+
+all: ext ext_d
+
+ext:  ext.c $(INCS)
+	$(CC) ext.c -o ext -O3 $(CFLAGS) $(LIBS)
+
+ext_d: ext.c $(INCS)
+	$(CC) ext.c -o ext_d -g -O $(CFLAGS) $(LIBS)
+
+run: all
+	./ext
+
+memchk: testbst_d spl_d
+	valgrind --error-exitcode=1 --quiet --leak-check=full ./ext_d
+
+clean:
+	rm -f ext ext_d
+
+.PHONY: clean run all
